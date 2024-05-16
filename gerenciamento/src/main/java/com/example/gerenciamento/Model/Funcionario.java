@@ -8,7 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Funcionario implements Serializable{
+public class Funcionario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String cpf;
@@ -18,21 +18,25 @@ public class Funcionario implements Serializable{
     public String getCpf() {
         return cpf;
     }
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
     public String getNomeFuncionario() {
         return nomeFuncionario;
     }
+
     public void setNomeFuncionario(String nomeFuncionario) {
         this.nomeFuncionario = nomeFuncionario;
     }
+
     public String getCargo() {
         return cargo;
     }
+
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
 
-    
 }
