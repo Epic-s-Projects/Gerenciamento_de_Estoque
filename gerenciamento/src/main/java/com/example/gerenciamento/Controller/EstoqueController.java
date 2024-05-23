@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/estoques")
+
 public class EstoqueController {
 
     @Autowired
