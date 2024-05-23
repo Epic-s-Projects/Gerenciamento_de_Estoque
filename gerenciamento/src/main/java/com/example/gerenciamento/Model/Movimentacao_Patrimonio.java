@@ -17,6 +17,8 @@ public class Movimentacao_Patrimonio implements Serializable {
     @ManyToOne
     @JoinColumn(name = "solicitante", referencedColumnName = "nomeFuncionario")
     private Funcionario solicitante;
+    @JoinColumn(name = "nPatrimonio", referencedColumnName = "nPatrimonio")
+    private Patrimonio nPatrimonio;
     private String origem;
     private String destino;
     private String descricao;
@@ -97,6 +99,14 @@ public class Movimentacao_Patrimonio implements Serializable {
 
     public void setDataAprovacao(ZonedDateTime dataAprovacao) {
         this.dataAprovacao = dataAprovacao;
+    }
+
+    public Patrimonio getnPatrimonio() {
+        return nPatrimonio;
+    }
+
+    public void setnPatrimonio(Patrimonio nPatrimonio) {
+        this.nPatrimonio = nPatrimonio;
     }
 
 }

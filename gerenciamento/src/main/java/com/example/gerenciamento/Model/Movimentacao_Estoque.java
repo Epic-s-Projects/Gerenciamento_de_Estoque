@@ -18,6 +18,8 @@ public class Movimentacao_Estoque implements Serializable {
     @ManyToOne
     @JoinColumn(name = "solicitante", referencedColumnName = "nomeFuncionario")
     private Funcionario solicitante;
+    @JoinColumn(name = "idEstoque", referencedColumnName = "idEstoque")
+    private Estoque idEstoque;
     private String descricao;
     private String tipo;
     private String status;
@@ -66,6 +68,12 @@ public class Movimentacao_Estoque implements Serializable {
     }
     public void setDataAprovacao(ZonedDateTime dataAprovacao) {
         this.dataAprovacao = dataAprovacao;
+    }
+    public Estoque getIdEstoque() {
+        return idEstoque;
+    }
+    public void setIdEstoque(Estoque idEstoque) {
+        this.idEstoque = idEstoque;
     }
     
 }
