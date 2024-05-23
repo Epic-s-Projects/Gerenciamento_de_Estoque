@@ -20,6 +20,10 @@ public class Estoque implements Serializable {
         return idEstoque;
     }
 
+    public void setIdEstoque(Long idEstoque) {
+        this.idEstoque = idEstoque;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -52,3 +56,4 @@ public class Estoque implements Serializable {
         this.quantidade = quantidade;
     }
 }
+
