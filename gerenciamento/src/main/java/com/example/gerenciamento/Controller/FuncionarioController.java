@@ -8,8 +8,6 @@ import com.example.gerenciamento.Model.Funcionario;
 import com.example.gerenciamento.Repository.FuncionarioRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
 @RestController
 public class FuncionarioController {
     @Autowired
@@ -20,7 +18,7 @@ public class FuncionarioController {
         fr.save(fn);
         return "";
     }
-    
+
     @PostMapping("/deletar-funcionario")
     public String deletaFuncionario(@RequestParam String cpf) {
         Funcionario funcionario = fr.findByCpf(cpf);
@@ -28,5 +26,20 @@ public class FuncionarioController {
 
         return "";
     }
-    
+
+    @PostMapping("/atualizar-funcionario")
+    public String atualizaFuncionario(@RequestParam String cpf,
+            @RequestParam String nomeFuncionario,
+            @RequestParam String cargo,
+            @RequestParam String email,
+            @RequestParam String senha) {
+        Funcionario funcionario = fr.findByCpf(cpf);
+        funcionario.setCargo(cargo);
+        funcionario.setNomeFuncionario(nomeFuncionario);
+        funcionario.setCpf(cpf);
+        funcionario.setEmail(email);
+        funcionario.setSenha(senha);
+        return "";
+    }
+
 }
