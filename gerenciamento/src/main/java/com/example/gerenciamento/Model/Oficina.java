@@ -10,12 +10,12 @@ import jakarta.persistence.Id;
 public class Oficina implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_oficina;
+    private Long idOficina;
     private Funcionario cpf;
-    private String categoria;
+    private String categoriaOficina;
 
-    public Long getId_oficina() {
-        return id_oficina;
+    public Long getIdOficina() {
+        return idOficina;
     }
 
     public Funcionario getCpf() {
@@ -27,11 +27,11 @@ public class Oficina implements Serializable {
     }
 
     public String getCategoria() {
-        return categoria;
+        return categoriaOficina;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategoriaOficina(String categoriaOficina) {
+        this.categoriaOficina = categoriaOficina;
     }
 
 }
