@@ -37,7 +37,7 @@ public class Patrimonio implements Serializable {
     private String ultimaManutencao;
 
     @OneToOne
-    @JoinColumn(name = "nSala", referencedColumnName = "numeroSala", nullable = false)
+    @JoinColumn(name = "nSala", referencedColumnName = "nSala", nullable = false)
     private Sala sala;
 
     @OneToOne

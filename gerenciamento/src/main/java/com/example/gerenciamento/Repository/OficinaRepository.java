@@ -6,5 +6,5 @@ import com.example.gerenciamento.Model.Oficina;
 
 
 public interface OficinaRepository extends CrudRepository<Oficina, Long>{
-    Oficina findByIdOficina(String idOficina);
+    Oficina findByIdOficina(Long idOficina);
 }
