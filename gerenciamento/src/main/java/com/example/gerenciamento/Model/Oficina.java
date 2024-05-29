@@ -20,7 +20,7 @@ public class Oficina implements Serializable {
     private Long idOficina;
 
     @OneToOne // um funcionario para muitas oficinas
-    @JoinColumn(name = "cpf", referencedColumnName = "cpfFuncionario", nullable = false)
+    @JoinColumn(name = "cpf", referencedColumnName = "cpf", nullable = false)
     private Funcionario cpf;
 
     @Nonnull

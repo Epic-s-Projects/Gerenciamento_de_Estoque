@@ -21,7 +21,7 @@ public class Movimentacao_Estoque implements Serializable {
     private long idMovimentacaoEstoque;
 
     @ManyToOne
-    @JoinColumn(name = "solicitante", referencedColumnName = "nomeFuncionario", nullable = false)
+    @JoinColumn(name = "nomeFuncionario", referencedColumnName = "nomeFuncionario", nullable = false)
     private Funcionario solicitante;
 
     @JoinColumn(name = "idEstoque", referencedColumnName = "idEstoque", nullable = false)

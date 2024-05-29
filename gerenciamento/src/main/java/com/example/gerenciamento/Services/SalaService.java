@@ -19,7 +19,7 @@ public class SalaService {
     }
 
     public Optional<Sala> findByNSala(String nSala) {
-        return salaRepository.findByNSala(nSala);
+        return salaRepository.findBynSala(nSala);
     }
 
     public Sala save(Sala sala) {
@@ -27,6 +27,6 @@ public class SalaService {
     }
 
     public void deleteByNSala(String nSala) {
-        salaRepository.deleteByNSala(nSala);
+        salaRepository.deleteBynSala(nSala);
     }
 }
