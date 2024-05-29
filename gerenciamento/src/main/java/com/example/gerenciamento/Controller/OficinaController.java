@@ -30,10 +30,10 @@ public class OficinaController {
 
     @PostMapping("/atualizar-oficina")
     public String atualizaOficina(@RequestParam String idOficina,
-            @RequestParam String categoriaOficina,
+            @RequestParam String nomeOficina,
             @RequestParam Funcionario cpf) {
         Oficina oficina = or.findByIdOficina(idOficina);
-        oficina.setCategoriaOficina(categoriaOficina);
+        oficina.setNomeOficina(nomeOficina);
         oficina.setCpf(cpf);
         return "";
     }

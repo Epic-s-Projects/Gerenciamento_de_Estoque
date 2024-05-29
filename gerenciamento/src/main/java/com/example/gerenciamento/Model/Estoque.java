@@ -1,19 +1,35 @@
 package com.example.gerenciamento.Model;
 
 import java.io.Serializable;
+
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Table(name = "estoque")
 @Entity
 public class Estoque implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEstoque;
+
+    @Nonnull
+    @Column(length = 200)
     private String nome;
+
+    @Nonnull
+    @Column(length = 200)
     private String descricao;
+
+    @Nonnull
+    @Column(length = 50)
     private String categoria;
+
+    @Nonnull
     private int quantidade;
 
     public Long getIdEstoque() {

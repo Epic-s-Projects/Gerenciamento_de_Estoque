@@ -3,7 +3,9 @@ package com.example.gerenciamento.Model;
 import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Table(name = "salas")
 @Entity
 public class Sala implements Serializable {
     @Id
