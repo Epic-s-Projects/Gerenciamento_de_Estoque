@@ -1,18 +1,31 @@
 package com.example.gerenciamento.Model;
 
 import java.io.Serializable;
+
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
+@Table(name = "oficinas")
 @Entity
 public class Oficina implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idOficina;
+
+    @OneToOne // um funcionario para muitas oficinas
+    @JoinColumn(name = "cpf", referencedColumnName = "cpfFuncionario", nullable = false)
     private Funcionario cpf;
-    private String categoriaOficina;
+
+    @Nonnull
+    @Column(length = 100)
+    private String nomeOficina;
 
     public Long getIdOficina() {
         return idOficina;
@@ -26,12 +39,14 @@ public class Oficina implements Serializable {
         this.cpf = cpf;
     }
 
-    public String getCategoria() {
-        return categoriaOficina;
+    public String getNomeOficina() {
+        return nomeOficina;
     }
 
-    public void setCategoriaOficina(String categoriaOficina) {
-        this.categoriaOficina = categoriaOficina;
+    public void setNomeOficina(String nomeOficina) {
+        this.nomeOficina = nomeOficina;
     }
+
+
 
 }
