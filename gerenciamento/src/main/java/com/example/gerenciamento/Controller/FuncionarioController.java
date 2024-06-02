@@ -31,7 +31,7 @@ public class FuncionarioController {
         }
     }
 
-    @PostMapping
+    @PostMapping("cadastrar-funcionario")
     public Funcionario createFuncionario(@RequestBody Funcionario funcionario) {
         return funcionarioService.save(funcionario);
     }

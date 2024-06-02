@@ -9,4 +9,8 @@ public class IndexController {
     public String acessoHomePage() {
         return "index";
     }
+    @GetMapping("/patrimonio")
+    public String acessoPatrimonio() {
+        return "patrimonio";
+    }
 }
