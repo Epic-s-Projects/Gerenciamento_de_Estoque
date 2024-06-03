@@ -31,9 +31,10 @@ public class FuncionarioController {
         }
     }
 
-    @PostMapping("cadastrar-funcionario")
-    public Funcionario createFuncionario(@RequestBody Funcionario funcionario) {
+    @PostMapping("/cadastrar-funcionario")
+    public Funcionario createFuncionario(@ModelAttribute Funcionario funcionario) {
         return funcionarioService.save(funcionario);
+
     }
 
     @PutMapping("/{cpf}")
