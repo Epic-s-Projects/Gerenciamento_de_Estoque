@@ -4,8 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.gerenciamento.Model.Oficina;
 import com.example.gerenciamento.Model.Patrimonio;
+import com.example.gerenciamento.Model.Sala;
+import com.example.gerenciamento.Services.OficinaService;
 import com.example.gerenciamento.Services.PatrimonioService;
+import com.example.gerenciamento.Services.SalaService;
 
 import java.util.Optional;
 
@@ -15,6 +19,12 @@ public class PatrimonioController {
 
     @Autowired
     private PatrimonioService patrimonioService;
+
+    @Autowired
+    private SalaService salaService;
+
+    @Autowired
+    private OficinaService oficinaService;
 
     @GetMapping
     public Iterable<Patrimonio> getAllPatrimonios() {
@@ -32,8 +42,22 @@ public class PatrimonioController {
     }
 
     @PostMapping
-    public Patrimonio createPatrimonio(@RequestBody Patrimonio patrimonio) {
-        return patrimonioService.save(patrimonio);
+    public ResponseEntity<Patrimonio> createPatrimonio(@RequestBody Patrimonio patrimonio) {
+        if (patrimonio.getNPatrimonio() == null || patrimonio.getNPatrimonio().isEmpty()) {
+            return ResponseEntity.badRequest().body(null);
+        }
+
+        Optional<Sala> salaOpt = salaService.findByNSala(patrimonio.getSala().getnSala());
+        Optional<Oficina> oficinaOpt = oficinaService.findById(patrimonio.getOficina().getIdOficina());
+
+        if (salaOpt.isPresent() && oficinaOpt.isPresent()) {
+            patrimonio.setSala(salaOpt.get());
+            patrimonio.setOficina(oficinaOpt.get());
+            Patrimonio savedPatrimonio = patrimonioService.save(patrimonio);
+            return ResponseEntity.ok(savedPatrimonio);
+        } else {
+            return ResponseEntity.badRequest().body(null);
+        }
     }
 
     @PutMapping("/{nPatrimonio}")

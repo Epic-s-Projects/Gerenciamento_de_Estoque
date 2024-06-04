@@ -44,6 +44,8 @@ public class Patrimonio implements Serializable {
     @JoinColumn(name = "idOficina", referencedColumnName = "idOficina", nullable = false)
     private Oficina oficina;
 
+    public Patrimonio() {}
+
     public String getNPatrimonio() {
         return nPatrimonio;
     }
