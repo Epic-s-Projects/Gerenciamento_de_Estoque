@@ -13,4 +13,8 @@ public class IndexController {
     public String acessoPatrimonio() {
         return "patrimonio";
     }
+    @GetMapping("/login")
+    public String acessoLogin() {
+        return "login/login-funcionario";
+    }
 }

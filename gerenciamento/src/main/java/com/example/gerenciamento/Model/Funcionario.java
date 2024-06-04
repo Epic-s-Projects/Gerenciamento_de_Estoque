@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 @Table(name = "funcionarios")
 @Entity
 public class Funcionario implements Serializable {
+    public Funcionario() {}
     @Id
     private String cpf;
 
