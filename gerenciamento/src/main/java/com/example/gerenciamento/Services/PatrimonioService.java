@@ -18,15 +18,15 @@ public class PatrimonioService {
         return patrimonioRepository.findAll();
     }
 
-    public Optional<Patrimonio> findByNPatrimonio(String nPatrimonio) {
-        return patrimonioRepository.findById(nPatrimonio);
+    public Optional<Patrimonio> findByIdPatrimonio(Long idPatrimonio) {
+        return patrimonioRepository.findById(idPatrimonio);
     }
 
     public Patrimonio save(Patrimonio patrimonio) {
         return patrimonioRepository.save(patrimonio);
     }
 
-    public void deleteByNPatrimonio(String nPatrimonio) {
-        patrimonioRepository.deleteById(nPatrimonio);
+    public void deleteByIdPatrimonio(Long idPatrimonio) {
+        patrimonioRepository.deleteById(idPatrimonio);
     }
 }
