@@ -40,4 +40,13 @@ public class IndexController {
         return "crud/patrimonio/cadastro-patrimonio";
     }
     
+    @GetMapping("/cadastro-oficina")
+    public String acessoCadOficina() {
+        return "crud/oficina/cadastro-oficina";
+    }
+
+    @GetMapping("/cadastro-sala")
+    public String acessoCadSala() {
+        return "crud/sala/cadastro-sala";
+    }
 }
