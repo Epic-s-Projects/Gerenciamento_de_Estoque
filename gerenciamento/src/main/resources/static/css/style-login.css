@@ -141,14 +141,10 @@ body {
     background: white;
 }
 
-.login-card input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: black;
-}
+
 
 .login-card button {
-    background: black;
+    background: rgb(231, 32, 32);
     color: white;
     padding: 1rem;
     border-radius: 100px;
