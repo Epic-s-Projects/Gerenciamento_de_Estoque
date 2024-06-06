@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://thymeleaf.org/">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Funcionario</title>
-    
+
     <link rel="stylesheet" th:href="@{css/header.css}">
     <link rel="stylesheet" th:href="@{css/footer.css}">
     <link rel="stylesheet" th:href="@{css/style-login.css}">
@@ -13,6 +14,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
     <div th:insert="~{fragmentos/header_deslogado :: header}"></div>
     <div class="login-card-container">
@@ -23,17 +25,19 @@
             <div class="login-card-header">
                 <h1>Faça seu Login</h1>
                 <div>Logo depois você será redirecionado para a Página Inicial novamente</div>
+                <div th:if="${erro != null}" class="error-message">
+                    <p th:text="${erro}"></p>
+                </div>
             </div>
+
             <form action="acesso-funcionario" class="login-card-form" method="post">
                 <div class="form-item">
                     <i class="ri-mail-fill form-item-icon"></i>
-                    <input type="text" placeholder="CPF do Usuário" name="cpf" id="emailForm" 
-                    autofocus required>
+                    <input type="text" placeholder="CPF do Usuário" name="cpf" id="emailForm" autofocus required>
                 </div>
                 <div class="form-item">
                     <i class="ri-lock-fill form-item-icon"></i>
-                    <input type="password" placeholder="Senha" name="senha" id="passwordForm"
-                     required>
+                    <input type="password" placeholder="Senha" name="senha" id="passwordForm" required>
                 </div>
                 <!-- <div class="form-item-other">
                     <div class="checkbox">
@@ -72,4 +76,5 @@
     </div>
     <div th:insert="~{fragmentos/footer :: footer}"></div>
 </body>
+
 </html>

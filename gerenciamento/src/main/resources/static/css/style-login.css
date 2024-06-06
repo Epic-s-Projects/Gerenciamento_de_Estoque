@@ -199,6 +199,11 @@ body {
     background-color: white;
     transform: scale(1.1);
 }
+
+.error-message {
+    margin-top: 1vh;
+    color: whitesmoke;
+}
 /* ---------- */
 
 

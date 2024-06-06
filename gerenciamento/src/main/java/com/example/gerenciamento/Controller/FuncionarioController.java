@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.gerenciamento.Model.Funcionario;
 import com.example.gerenciamento.Repository.FuncionarioRepository;
 
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -29,7 +28,7 @@ public class FuncionarioController {
 
     boolean acessoFuncionario = false;
 
-    @PostMapping("/cadastrar-funcionario") 
+    @PostMapping("/cadastrar-funcionario")
     public String cadastrarFuncionarioBD(Funcionario funcionario, Model model) {
         try {
             funcionarioRepository.save(funcionario);
@@ -60,8 +59,7 @@ public class FuncionarioController {
     }
 
     @PostMapping("acesso-funcionario")
-    public String acessoFuncionario(@RequestParam String cpf, @RequestParam String senha) {
-        // método para verificar acesso
+    public String acessoFuncionario(@RequestParam String cpf, @RequestParam String senha, Model model) {
         try {
             boolean verificaCpf = funcionarioRepository.existsById(cpf);
             boolean verificaSenha = funcionarioRepository.findByCpf(cpf).getSenha().equals(senha);
@@ -73,11 +71,13 @@ public class FuncionarioController {
                 acessoFuncionario = true;
                 url = "redirect:/";
             } else {
-                url = "redirect:/login-funcionario";
+                model.addAttribute("erro", "Credenciais incorretas");
+                url = "login/login-funcionario";
             }
             return url;
         } catch (Exception e) {
-            return "redirect:/login-funcionario";
+            model.addAttribute("erro", "Credenciais incorretas");
+            return "login/login-funcionario";
         }
     }
 
@@ -136,11 +136,10 @@ public class FuncionarioController {
         if (funcionario != null) {
             mv.addObject("funcionario", funcionario);
         } else {
-            
+
         }
 
         return mv;
     }
-
 
 }
