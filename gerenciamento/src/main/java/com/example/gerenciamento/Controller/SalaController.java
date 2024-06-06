@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.example.gerenciamento.Model.Sala;
 import com.example.gerenciamento.Repository.SalaRepository;
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller

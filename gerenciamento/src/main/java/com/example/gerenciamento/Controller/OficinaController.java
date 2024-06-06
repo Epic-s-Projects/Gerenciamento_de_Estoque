@@ -34,7 +34,7 @@ public class OficinaController {
         try {
             oficinaRepository.save(oficina);
             System.out.println("Cadastro realizado com sucesso!");
-            return "/interna/interna-funcionario";
+            return "crud/oficina/cadastro-oficina";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar oficina: " + e.getMessage());
             return "crud/oficina/cadastro-oficina";

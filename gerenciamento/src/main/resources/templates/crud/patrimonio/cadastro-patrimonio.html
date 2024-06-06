@@ -19,7 +19,7 @@
 
     <div class="container">
         <h2>Registrar Patrimônio</h2>
-        <form action="#" method="post">
+        <form action="cadastrar-patrimonio" method="post">
             <div class="form-group">
                 <label for="nPatrimonio">Número do Patrimônio:</label>
                 <input type="text" id="nPatrimonio" name="nPatrimonio" required>
@@ -45,21 +45,27 @@
                 <input type="text" id="ultimaManutencao" name="ultimaManutencao" required>
             </div>
             <div class="form-group">
-                <label for="destino">Destino:</label>
-                <select id="destino" name="destino" required>
+                <label for="sala">Sala:</label>
+                <input type="text" id="sala" name="sala" required>
+                <!-- <select id="destino" name="destino" required>
                     <optgroup label="Salas">
                         <option th:each="sala : ${salas}" th:value="${'sala-' + sala.idSala}" th:text="${sala.nome}"></option>
                     </optgroup>
                     <optgroup label="Oficinas">
                         <option th:each="oficina : ${oficinas}" th:value="${'oficina-' + oficina.idOficina}" th:text="${oficina.nome}"></option>
                     </optgroup>
-                </select>
-            </div>            
+                </select> -->
+            </div> 
+            <div class="form-group">
+                <label for="oficina">Oficina:</label>
+                <input type="text" id="oficina" name="oficina" required>  
+            </div>     
             <div class="form-group">
                 <button type="submit">Registrar</button>
             </div>
         </form>
     </div>
+    
 
     <div th:insert="~{fragmentos/footer :: footer}"></div>
 </body>
