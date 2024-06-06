@@ -38,9 +38,9 @@ public class Movimentacao_Estoque implements Serializable {
     @Nonnull
     @Column(length = 20)
     private String status;
+
     // zoned date time é para representar a data, horario e fuso horário caso
     // necessário das datas
-
     @Nonnull
     private ZonedDateTime dataSolicitacao;
 

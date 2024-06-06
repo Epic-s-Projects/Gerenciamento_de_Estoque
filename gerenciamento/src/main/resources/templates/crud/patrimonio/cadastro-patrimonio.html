@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Patrimônio</title>
+    <link rel="stylesheet" th:href="@{css/header.css}">
+    <link rel="stylesheet" th:href="@{css/cadastro-patrimonio.css}">
+    <link rel="stylesheet" th:href="@{css/universal.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div th:insert="~{fragmentos/header_deslogado :: header}"></div>
+
+    <div class="container">
+        <h2>Registrar Patrimônio</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nPatrimonio">Número do Patrimônio:</label>
+                <input type="text" id="nPatrimonio" name="nPatrimonio" required>
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" required>
+            </div>
+            <div class="form-group">
+                <label for="categoriaPatrimonio">Categoria:</label>
+                <input type="text" id="categoriaPatrimonio" name="categoriaPatrimonio" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required>
+            </div>
+            <div class="form-group">
+                <label for="ultimaManutencao">Última Manutenção:</label>
+                <input type="text" id="ultimaManutencao" name="ultimaManutencao" required>
+            </div>
+            <div class="form-group">
+                <label for="destino">Destino:</label>
+                <select id="destino" name="destino" required>
+                    <optgroup label="Salas">
+                        <option th:each="sala : ${salas}" th:value="${'sala-' + sala.idSala}" th:text="${sala.nome}"></option>
+                    </optgroup>
+                    <optgroup label="Oficinas">
+                        <option th:each="oficina : ${oficinas}" th:value="${'oficina-' + oficina.idOficina}" th:text="${oficina.nome}"></option>
+                    </optgroup>
+                </select>
+            </div>            
+            <div class="form-group">
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
+
+    <div th:insert="~{fragmentos/footer :: footer}"></div>
+</body>
+
+</html>
