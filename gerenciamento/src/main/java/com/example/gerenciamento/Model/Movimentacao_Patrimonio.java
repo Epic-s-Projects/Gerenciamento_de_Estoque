@@ -24,8 +24,8 @@ public class Movimentacao_Patrimonio implements Serializable {
     @JoinColumn(name = "nomeFuncionario", referencedColumnName = "nomeFuncionario", nullable = false)
     private Funcionario solicitante;
 
-    @JoinColumn(name = "nPatrimonio", referencedColumnName = "nPatrimonio", nullable = false)
-    private Patrimonio nPatrimonio;
+    @JoinColumn(name = "idPatrimonio", referencedColumnName = "idPatrimonio", nullable = false)
+    private Patrimonio idPatrimonio;
 
     @Nonnull
     @Column(length = 100)
@@ -127,12 +127,14 @@ public class Movimentacao_Patrimonio implements Serializable {
         this.dataAprovacao = dataAprovacao;
     }
 
-    public Patrimonio getnPatrimonio() {
-        return nPatrimonio;
+    public Patrimonio getIdPatrimonio() {
+        return idPatrimonio;
     }
 
-    public void setnPatrimonio(Patrimonio nPatrimonio) {
-        this.nPatrimonio = nPatrimonio;
+    public void setIdPatrimonio(Patrimonio idPatrimonio) {
+        this.idPatrimonio = idPatrimonio;
     }
+
+    
 
 }

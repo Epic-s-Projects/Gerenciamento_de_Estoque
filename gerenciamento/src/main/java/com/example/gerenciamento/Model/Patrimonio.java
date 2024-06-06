@@ -14,6 +14,10 @@ import jakarta.persistence.Table;
 @Entity
 public class Patrimonio implements Serializable {
     @Id
+    private Long idPatrimonio;
+
+    @Nonnull
+    @Column(length = 200)
     private String nPatrimonio;
 
     @Nonnull
@@ -44,13 +48,9 @@ public class Patrimonio implements Serializable {
     @JoinColumn(name = "idOficina", referencedColumnName = "idOficina", nullable = false)
     private Oficina oficina;
 
-    public String getNPatrimonio() {
-        return nPatrimonio;
-    }
+    public Patrimonio() {}
 
-    public void setNPatrimonio(String nPatrimonio) {
-        this.nPatrimonio = nPatrimonio;
-    }
+    
 
     public String getNome() {
         return nome;
@@ -107,4 +107,32 @@ public class Patrimonio implements Serializable {
     public void setOficina(Oficina oficina) {
         this.oficina = oficina;
     }
+
+
+
+    public Long getIdPatrimonio() {
+        return idPatrimonio;
+    }
+
+
+
+    public void setIdPatrimonio(Long idPatrimonio) {
+        this.idPatrimonio = idPatrimonio;
+    }
+
+
+
+    public String getnPatrimonio() {
+        return nPatrimonio;
+    }
+
+
+
+    public void setnPatrimonio(String nPatrimonio) {
+        this.nPatrimonio = nPatrimonio;
+    }
+
+
+
+    
 }
