@@ -3,6 +3,8 @@ package com.example.gerenciamento.Model;
 import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Table(name = "salas")
@@ -10,7 +12,11 @@ import jakarta.persistence.Table;
 public class Sala implements Serializable {
     @Id
     private String nSala;
+
+    @ManyToOne 
+    @JoinColumn(name = "cpf", referencedColumnName = "cpf", nullable = false)
     private Funcionario cpf;
+    
     private String categoriaSala;
 
     public String getnSala() {
