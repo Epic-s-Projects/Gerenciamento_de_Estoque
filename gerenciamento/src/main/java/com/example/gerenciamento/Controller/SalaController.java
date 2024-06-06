@@ -1,36 +1,36 @@
-// package com.example.gerenciamento.Controller;
+package com.example.gerenciamento.Controller;
 
-// import java.util.List;
+import java.util.List;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Controller;
-// import org.springframework.ui.Model;
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.PathVariable;
-// import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.RequestMethod;
-// import org.springframework.web.bind.annotation.RequestParam;
-// import org.springframework.web.servlet.ModelAndView;
-// import com.example.gerenciamento.Model.Sala;
-// import com.example.gerenciamento.Repository.SalaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import com.example.gerenciamento.Model.Sala;
+import com.example.gerenciamento.Repository.SalaRepository;
 
 @Controller
 public class SalaController {
-    // @Autowired
-    // private SalaRepository salaRepository;
+    @Autowired
+    private SalaRepository salaRepository;
 
-    // @PostMapping("/cadastrar-sala")
-    // public String cadastrarSala(Sala sala, Model model) {
-    //     try {
-    //         salaRepository.save(sala);
-    //         System.out.println("Cadastro realizado com sucesso!");
-    //         return "/interna/interna-funcionario";
-    //     } catch (Exception e) {
-    //         System.out.println("Erro ao cadastrar sala: " + e.getMessage());
-    //         return "/cadastro/cadastro-sala";
-    //     }
-    // }
+    @PostMapping("/cadastrar-sala")
+    public String cadastrarSala(Sala sala, Model model) {
+        try {
+            salaRepository.save(sala);
+            System.out.println("Cadastro realizado com sucesso!");
+            return "/crud/sala/cadastro-sala";
+        } catch (Exception e) {
+            System.out.println("Erro ao cadastrar sala: " + e.getMessage());
+            return "/crud/sala/cadastro-sala";
+        }
+    }
 
     // @GetMapping("/gerenciamento-sala")
     // public String listarSalas(Model model) {
