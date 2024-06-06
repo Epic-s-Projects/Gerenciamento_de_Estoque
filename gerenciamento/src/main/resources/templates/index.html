@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <link rel="stylesheet" th:href="@{css/header.css}">
+    <link rel="stylesheet" th:href="@{css/lista.css}">
     <link rel="stylesheet" th:href="@{css/universal.css}">
     <link rel="stylesheet" th:href="@{css/footer.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
     <div th:insert="~{fragmentos/header_deslogado :: header}"></div>
+
+    
     <div th:insert="~{fragmentos/footer :: footer}"></div>
 </body>
+
 </html>
