@@ -8,7 +8,7 @@ import com.example.gerenciamento.Model.Sala;
 
 
 public interface SalaRepository extends CrudRepository<Sala, String>{
-    // Sala findByNSala(String nSala);
+    // Sala findByNSalaVerdade(String nSala);
     Optional<Sala> findBynSala(String nSala);
     void deleteBynSala(String nSala);
 }

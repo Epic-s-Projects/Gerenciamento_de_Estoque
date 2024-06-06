@@ -34,7 +34,7 @@ public class FuncionarioController {
         try {
             funcionarioRepository.save(funcionario);
             System.out.println("Cadastro realizado com sucesso!");
-            return "/interna/interna-funcionario";
+            return "/login/login-funcionario";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar funcionario: " + e.getMessage());
             model.addAttribute("erroSenha", "Sua senha está incorreta");
@@ -71,7 +71,7 @@ public class FuncionarioController {
                 httpSession.setAttribute("funcionario", funcionario);
                 httpSession.setAttribute("loggedin", true);
                 acessoFuncionario = true;
-                url = "redirect:/interna-funcionario";
+                url = "redirect:/";
             } else {
                 url = "redirect:/login-funcionario";
             }
