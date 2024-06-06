@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.example.gerenciamento.Model.Estoque;
 
 public interface EstoqueRepository extends CrudRepository<Estoque, Long>{
-
+    Estoque findByIdEstoque(Long idEstoque);
 }

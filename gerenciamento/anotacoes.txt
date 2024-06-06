@@ -1,7 +1,7 @@
 O QUE FALTA PARA O PROJETO:
 
-1 - Fazer os Controladores para o Front
-2 - Fazer Formulário de Cadastro de Funcionário
-3 - Fazer página Home
-4 - Fazer páginas de salas e oficinas
-5 - Fazer páginas de manutenções (entradas e saídas de patrimonios e consumíveis)
+1 - Fazer os Controladores para o Front - Vinicius
+2 - Fazer Formulário de Cadastro de Funcionário - Anthony
+3 - Fazer página Home 
+4 - Fazer páginas de salas e oficinas - Vinicius
+5 - Fazer páginas de manutenções (entradas e saídas de patrimonios e consumíveis) - Paiva
