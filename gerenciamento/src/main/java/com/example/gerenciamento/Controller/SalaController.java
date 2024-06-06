@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.example.gerenciamento.Model.Sala;
 import com.example.gerenciamento.Repository.SalaRepository;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class SalaController {
@@ -21,60 +22,67 @@ public class SalaController {
     private SalaRepository salaRepository;
 
     @PostMapping("/cadastrar-sala")
-    public String cadastrarSala(Sala sala, Model model) {
+    public String cadastrarSala(Sala sala, Model model, HttpSession session) {
+        Object usuarioLogado = session.getAttribute("usuarioLogado");
+        if (usuarioLogado == null) {
+            model.addAttribute("erro", "Você precisa estar logado para cadastrar uma sala.");
+            return "crud/sala/cadastro-sala";
+        }
+
         try {
             salaRepository.save(sala);
             System.out.println("Cadastro realizado com sucesso!");
-            return "/crud/sala/cadastro-sala";
+            return "/interna/interna-funcionario";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar sala: " + e.getMessage());
-            return "/crud/sala/cadastro-sala";
+            model.addAttribute("erro", "Erro ao cadastrar sala: " + e.getMessage());
+            return "crud/sala/cadastro-sala";
         }
     }
 
     // @GetMapping("/gerenciamento-sala")
     // public String listarSalas(Model model) {
-    //     List<Sala> salas = (List<Sala>) salaRepository.findAll();
-    //     model.addAttribute("salas", salas);
-    //     return "gerenciamento/gerenciamento-sala";
+    // List<Sala> salas = (List<Sala>) salaRepository.findAll();
+    // model.addAttribute("salas", salas);
+    // return "gerenciamento/gerenciamento-sala";
     // }
 
     // @RequestMapping(value = "/delete-sala/{nSala}", method = RequestMethod.GET)
     // public String excluirSala(@PathVariable("nSala") String nSala) {
-    //     try {
-    //         Sala sala = salaRepository.findByNSalaVerdade(nSala);
-    //         if (sala != null) {
-    //             salaRepository.delete(sala);
-    //             System.out.println("Sala excluído com sucesso!");
-    //         } else {
-    //             System.out.println("Sala não encontrado para exclusão");
-    //         }
-    //     } catch (Exception e) {
-    //         System.out.println("Erro ao excluir Sala: " + e.getMessage());
-    //     }
-    //     return "redirect:/gerenciamento-sala";
+    // try {
+    // Sala sala = salaRepository.findByNSalaVerdade(nSala);
+    // if (sala != null) {
+    // salaRepository.delete(sala);
+    // System.out.println("Sala excluído com sucesso!");
+    // } else {
+    // System.out.println("Sala não encontrado para exclusão");
+    // }
+    // } catch (Exception e) {
+    // System.out.println("Erro ao excluir Sala: " + e.getMessage());
+    // }
+    // return "redirect:/gerenciamento-sala";
     // }
 
     // @RequestMapping(value = "/edit-sala/{nSala}", method = RequestMethod.GET)
     // public ModelAndView editarSala(@PathVariable("nSala") String nSala) {
-    //     ModelAndView mv = new ModelAndView("crud/sala/edit-sala");
-    //     Sala sala = salaRepository.findByNSalaVerdade(nSala);
-    //     mv.addObject("nSala", nSala);
-    //     mv.addObject("sala", sala);
-    //     return mv;
+    // ModelAndView mv = new ModelAndView("crud/sala/edit-sala");
+    // Sala sala = salaRepository.findByNSalaVerdade(nSala);
+    // mv.addObject("nSala", nSala);
+    // mv.addObject("sala", sala);
+    // return mv;
     // }
 
     // @PostMapping("/atualizar-sala")
     // public String atualizarSala(@RequestParam("nSala") String nSala, Sala sala) {
-    //     Sala salaExistente = salaRepository.findByNSalaVerdade(nSala);
-    //     if (salaExistente != null) {
-    //         salaExistente.setnSala(sala.getnSala());
-    //         salaExistente.setCpf(sala.getCpf()); // talvez essa parte dê erro
-    //         salaExistente.setnSala(sala.getCategoriaSala());
-    //         salaRepository.save(salaExistente);
-    //         return "redirect:/gerenciamento-sala";
-    //     } else {
-    //         return "redirect:/gerenciamento-sala";
-    //     }
+    // Sala salaExistente = salaRepository.findByNSalaVerdade(nSala);
+    // if (salaExistente != null) {
+    // salaExistente.setnSala(sala.getnSala());
+    // salaExistente.setCpf(sala.getCpf()); // talvez essa parte dê erro
+    // salaExistente.setnSala(sala.getCategoriaSala());
+    // salaRepository.save(salaExistente);
+    // return "redirect:/gerenciamento-sala";
+    // } else {
+    // return "redirect:/gerenciamento-sala";
+    // }
     // }
 }

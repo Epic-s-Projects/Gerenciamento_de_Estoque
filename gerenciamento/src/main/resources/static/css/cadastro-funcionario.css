@@ -1,13 +1,13 @@
 body {
+    margin: 0 auto;
     display: flex;
-    height: 100vh;
     justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    flex-direction: column;
 }
 
 .container {
+    margin: 0 auto;
+    margin-top: 12vh;
     max-width: 700px;
     width: 100%;
     background: #fff;
@@ -28,7 +28,7 @@ body {
     bottom: 0;
     height: 3px;
     width: 30px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background-color: #f9f9f9;
 }
 
 .container form .user-details {
@@ -117,10 +117,10 @@ form .button input{
     font-weight: 500;
     border-radius: 5px;
     letter-spacing: 1px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background-color: #ff0000;
 }
 form .button input:hover{
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background-color: #ca3e3e;
 }
 
 @media (max-width:584px){

@@ -16,13 +16,21 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.gerenciamento.Model.Oficina;
 import com.example.gerenciamento.Repository.OficinaRepository;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class OficinaController {
     @Autowired
     private OficinaRepository oficinaRepository;
 
     @PostMapping("/cadastrar-oficina")
-    public String cadastrarOficina(Oficina oficina, Model model) {
+    public String cadastrarOficina(Oficina oficina, Model model, HttpSession session) {
+        Object usuarioLogado = session.getAttribute("usuarioLogado");
+        if (usuarioLogado == null) {
+            model.addAttribute("erro", "Você precisa estar logado para cadastrar uma oficina.");
+            return "crud/oficina/cadastro-oficina";
+        }
+
         try {
             oficinaRepository.save(oficina);
             System.out.println("Cadastro realizado com sucesso!");
@@ -34,14 +42,26 @@ public class OficinaController {
     }
 
     @GetMapping("/gerenciamento-oficina")
-    public String listarOficinas(Model model) {
+    public String listarOficinas(Model model, HttpSession session) {
+        Object usuarioLogado = session.getAttribute("usuarioLogado");
+        if (usuarioLogado == null) {
+            model.addAttribute("erro", "Você precisa estar logado para ver a lista de oficinas.");
+            return "redirect:/login";
+        }
+
         List<Oficina> oficinas = (List<Oficina>) oficinaRepository.findAll();
         model.addAttribute("oficinas", oficinas);
         return "gerenciamento/gerenciamento-oficina";
     }
 
     @RequestMapping(value = "/delete-oficina/{idOficina}", method = RequestMethod.GET)
-    public String excluirOficina(@PathVariable("idOficina") Long idOficina) {
+    public String excluirOficina(@PathVariable("idOficina") Long idOficina, HttpSession session, Model model) {
+        Object usuarioLogado = session.getAttribute("usuarioLogado");
+        if (usuarioLogado == null) {
+            model.addAttribute("erro", "Você precisa estar logado para excluir uma oficina.");
+            return "redirect:/login";
+        }
+
         try {
             Oficina oficina = oficinaRepository.findByIdOficina(idOficina);
             if (oficina != null) {
@@ -57,7 +77,13 @@ public class OficinaController {
     }
 
     @RequestMapping(value = "/edit-oficina/{idOficina}", method = RequestMethod.GET)
-    public ModelAndView editarOficina(@PathVariable("idOficina") Long idOficina) {
+    public ModelAndView editarOficina(@PathVariable("idOficina") Long idOficina, HttpSession session, Model model) {
+        Object usuarioLogado = session.getAttribute("usuarioLogado");
+        if (usuarioLogado == null) {
+            model.addAttribute("erro", "Você precisa estar logado para editar uma oficina.");
+            return new ModelAndView("redirect:/login");
+        }
+
         ModelAndView mv = new ModelAndView("crud/oficina/edit-oficina");
         Oficina oficina = oficinaRepository.findByIdOficina(idOficina);
         mv.addObject("idOficina", idOficina);
@@ -66,7 +92,13 @@ public class OficinaController {
     }
 
     @PostMapping("/atualizar-oficina")
-    public String atualizarOficina(@RequestParam("idOficina") Long idOficina, Oficina oficina) {
+    public String atualizarOficina(@RequestParam("idOficina") Long idOficina, Oficina oficina, HttpSession session, Model model) {
+        Object usuarioLogado = session.getAttribute("usuarioLogado");
+        if (usuarioLogado == null) {
+            model.addAttribute("erro", "Você precisa estar logado para atualizar uma oficina.");
+            return "redirect:/login";
+        }
+
         Oficina oficinaExistente = oficinaRepository.findByIdOficina(idOficina);
         if (oficinaExistente != null) {
             oficinaExistente.setCpf(oficina.getCpf()); // talvez essa parte dê erro

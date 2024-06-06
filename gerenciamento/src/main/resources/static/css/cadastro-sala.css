@@ -1,50 +1,50 @@
 .container {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 0 auto;
     margin-top: 12vh;
-    background: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
+    font-weight: bold;
 }
 
-.form-group input[type="text"],
-.form-group select {
+input[type="text"],
+button[type="submit"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
-.form-group button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+button[type="submit"] {
     background-color: #ff0000;
-    color: #fff;
+    color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.form-group button:hover {
+button[type="submit"]:hover {
     background-color: #ca3e3e;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
 }
