@@ -1,28 +1,43 @@
 package com.example.gerenciamento.Controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class indexController {
+
+@Controller
+public class IndexController {
     @GetMapping("/")
-    public String index() {
-        return "formSala";
+    public String acessoHomePage() {
+        return "index";
     }
-    @GetMapping("/formCadFuncionarios")
-    public String formCadFuncionarios() {
-        return "formCadFuncionarios";
+
+    // @GetMapping("/patrimonio")
+    // public String acessoPatrimonio() {
+    // return "patrimonio";
+    // }
+    @GetMapping("/login")
+    public String acessoLoginFuncionario() {
+        return "login/login-funcionario";
     }
-    @GetMapping("/formEstoque")
-    public String formEstoque() {
-        return "formEstoque";
+
+    @GetMapping("/cadastro-funcionario")
+    public String acessoCadastroFuncionario() {
+        return "cadastro/cadastro-funcionario";
     }
-    @GetMapping("/formOficina")
-    public String formOficina() {
-        return "formOficina";
+
+    @GetMapping("/manutencoes")
+    public String acessoManutencoes() {
+        return "manutencoes/manutencoes";
     }
-    @GetMapping("/formPatrimonio")
-    public String formPatrimonio() {
-        return "formPatrimonio";
+
+    @GetMapping("/cadastro-estoque")
+    public String acessoCadEstoque() {
+        return "crud/estoque/cadastro-estoque";
     }
+
+    @GetMapping("/cadastro-patrimonio")
+    public String acessoCadPatrimonio() {
+        return "crud/patrimonio/cadastro-patrimonio";
+    }
+    
 }
