@@ -9,12 +9,16 @@ public class IndexController {
     public String acessoHomePage() {
         return "index";
     }
-    @GetMapping("/patrimonio")
-    public String acessoPatrimonio() {
-        return "patrimonio";
-    }
+    // @GetMapping("/patrimonio")
+    // public String acessoPatrimonio() {
+    //     return "patrimonio";
+    // }
     @GetMapping("/login")
-    public String acessoLogin() {
+    public String acessoLoginFuncionario() {
         return "login/login-funcionario";
+    }
+    @GetMapping("/cadastro-funcionario")
+    public String acessoCadastroFuncionario() {
+        return "cadastro/cadastro-funcionario";
     }
 }

@@ -1,4 +1,4 @@
-package com.example.gerenciamento.Controller;
+package com.example.gerenciamento.RestController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/mov_estoque")
-public class MovEstoqueController {
+public class MovEstoqueRestController {
 
     @Autowired
     private MovEstoqueService movEstoqueService;
