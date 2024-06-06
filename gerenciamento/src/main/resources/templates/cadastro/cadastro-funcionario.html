@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/header.css}">
+    <link rel="stylesheet" th:href="@{css/universal.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
+    <link rel="stylesheet" th:href="@{css/cadastro-funcionario.css}">
+</head>
+
+<body>
+    <div th:insert="~{fragmentos/header_deslogado :: header}"></div>
+    <div class="container">
+        <div class="title">registrar</div>
+        <form action="cadastrar-funcionario" method="post">
+            <div class="user-details">
+
+                <div class="input-box">
+                    <span class="details">Nome Completo do Funcionario</span>
+                    <input name="nomeFuncionario" type="text" placeholder="Insira seu nome completo" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">CPF</span>
+                    <input name="cpf" type="text" placeholder="Insira um cpf ao funcionario" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input name="email" type="email" placeholder="Insira o email do funcioanrio" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Cargo</span>
+                    <input name="cargo" type="text" placeholder="Insira o cargo do Funcionario" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Senha</span>
+                    <input type="password" placeholder="Insira uma Senha para o Funcionario" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Confirmar Senha</span>
+                    <input name="senha" type="password" placeholder="Confirme a senha do Funcionario" required>
+                </div>
+            </div>
+            
+             <div class="button">
+                <input type="submit" value="Register">
+             </div>
+    </div>
+    </form>
+    </div>
+
+    <div th:insert="~{fragmentos/footer :: footer}"></div>
+</body>
+
+</html>
