@@ -15,7 +15,7 @@ public class Sala implements Serializable {
 
     @ManyToOne 
     @JoinColumn(name = "cpf", referencedColumnName = "cpf", nullable = false)
-    private Funcionario cpf;
+    private Funcionario funcionario;
     
     private String categoriaSala;
 
@@ -27,13 +27,7 @@ public class Sala implements Serializable {
         this.nSala = nSala;
     }
 
-    public Funcionario getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(Funcionario cpf) {
-        this.cpf = cpf;
-    }
+    
 
     public String getCategoriaSala() {
         return categoriaSala;
@@ -41,6 +35,14 @@ public class Sala implements Serializable {
 
     public void setCategoriaSala(String categoriaSala) {
         this.categoriaSala = categoriaSala;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 
 }

@@ -25,7 +25,7 @@ public class PatrimonioController {
         try {
             patrimonioRepository.save(patrimonio);
             System.out.println("Cadastro realizado com sucesso!");
-            return "/index";
+            return "/interna/interna-funcionario";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar patrimonio: " + e.getMessage());
             return "/crud/patrimonio/cadastro-patrimonio";

@@ -42,7 +42,7 @@ public class OficinaRestController {
         if (optionalOficina.isPresent()) {
             Oficina oficina = optionalOficina.get();
             oficina.setNomeOficina(oficinaDetails.getNomeOficina());
-            oficina.setCpf(oficinaDetails.getCpf());
+            oficina.setFuncionario(oficinaDetails.getFuncionario());
             Oficina updatedOficina = oficinaService.save(oficina);
             return ResponseEntity.ok(updatedOficina);
         } else {

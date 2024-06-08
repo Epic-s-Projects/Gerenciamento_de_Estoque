@@ -41,7 +41,7 @@ public class SalaRestController {
         Optional<Sala> optionalSala = salaService.findByNSala(nSala);
         if (optionalSala.isPresent()) {
             Sala sala = optionalSala.get();
-            sala.setCpf(salaDetails.getCpf());
+            sala.setFuncionario(salaDetails.getFuncionario());
             sala.setCategoriaSala(salaDetails.getCategoriaSala());
             Sala updatedSala = salaService.save(sala);
             return ResponseEntity.ok(updatedSala);

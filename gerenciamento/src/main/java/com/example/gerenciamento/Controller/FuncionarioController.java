@@ -33,7 +33,7 @@ public class FuncionarioController {
         try {
             funcionarioRepository.save(funcionario);
             System.out.println("Cadastro realizado com sucesso!");
-            return "/login/login-funcionario";
+            return "/";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar funcionario: " + e.getMessage());
             model.addAttribute("erroSenha", "Sua senha está incorreta");
@@ -44,7 +44,7 @@ public class FuncionarioController {
     @GetMapping("/logout-funcionario")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/login-funcionario";
+        return "redirect:/";
     }
 
     @GetMapping("/interna-funcionario")
@@ -53,7 +53,7 @@ public class FuncionarioController {
         if (acessoFuncionario) {
             vaiPara = "interna/interna-funcionario";
         } else {
-            vaiPara = "redirect:/login-funcionario";
+            vaiPara = "redirect:/";
         }
         return vaiPara;
     }
@@ -69,15 +69,15 @@ public class FuncionarioController {
                 httpSession.setAttribute("funcionario", funcionario);
                 httpSession.setAttribute("loggedin", true);
                 acessoFuncionario = true;
-                url = "redirect:/";
+                url = "redirect:/interna-funcionario";
             } else {
                 model.addAttribute("erro", "Credenciais incorretas");
-                url = "login/login-funcionario";
+                url = "/";
             }
             return url;
         } catch (Exception e) {
             model.addAttribute("erro", "Credenciais incorretas");
-            return "login/login-funcionario";
+            return "/";
         }
     }
 

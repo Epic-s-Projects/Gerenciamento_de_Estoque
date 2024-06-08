@@ -7,8 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.example.gerenciamento.Model.Sala;
 
 
-public interface SalaRepository extends CrudRepository<Sala, String>{
-    // Sala findByNSalaVerdade(String nSala);
+public interface SalaRepository extends CrudRepository<Sala, String> {
     Optional<Sala> findBynSala(String nSala);
     void deleteBynSala(String nSala);
 }
