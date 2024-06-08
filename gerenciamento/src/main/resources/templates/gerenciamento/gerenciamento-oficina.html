@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gerenciamento de Oficinas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{css/header.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
+    <link rel="stylesheet" th:href="@{css/universal.css}">
+</head>
+<body>
+    <div th:insert="~{fragmentos/header_logado :: header}"></div>
+<div class="container mt-4">
+    <h2>Lista de Oficinas</h2>
+    <div class="row">
+        <div th:each="oficina : ${oficinas}" class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${oficina.nomeOficina}">Nome da Oficina</h5>
+                    <p class="card-text">Responsável: <span th:text="${oficina.funcionario.nomeFuncionario}">Nome do Funcionário</span></p>
+                    <p class="card-text">CPF: <span th:text="${oficina.funcionario.cpf}">CPF do Funcionário</span></p>
+                    <a th:href="@{'/edit-oficina/' + ${oficina.idOficina}}" class="btn btn-primary">Editar</a>
+                    <a th:href="@{'/delete-oficina/' + ${oficina.idOficina}}" class="btn btn-danger">Excluir</a>
+                    <a href="/cadastro-patrimonio" class="btn btn-primary">Ativos patrimoniais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{fragmentos/footer :: footer}"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

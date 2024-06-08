@@ -1,0 +1,10 @@
+.banner{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img{
+    width: 800px;
+}

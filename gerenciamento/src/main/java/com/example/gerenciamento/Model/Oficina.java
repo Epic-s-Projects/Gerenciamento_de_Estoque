@@ -21,7 +21,7 @@ public class Oficina implements Serializable {
 
     @ManyToOne 
     @JoinColumn(name = "cpf", referencedColumnName = "cpf", nullable = false)
-    private Funcionario cpf;
+    private Funcionario funcionario;
 
     @Nonnull
     @Column(length = 100)
@@ -31,13 +31,25 @@ public class Oficina implements Serializable {
         return idOficina;
     }
 
-    public Funcionario getCpf() {
-        return cpf;
+    
+
+    public void setIdOficina(Long idOficina) {
+        this.idOficina = idOficina;
     }
 
-    public void setCpf(Funcionario cpf) {
-        this.cpf = cpf;
+
+
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
+
+
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+
 
     public String getNomeOficina() {
         return nomeOficina;
