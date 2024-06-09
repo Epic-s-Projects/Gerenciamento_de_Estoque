@@ -9,49 +9,54 @@
     <link rel="stylesheet" th:href="@{css/universal.css}">
     <link rel="stylesheet" th:href="@{css/footer.css}">
     <link rel="stylesheet" th:href="@{css/cadastro-funcionario.css}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
     <div th:insert="~{fragmentos/header_deslogado :: header}"></div>
     
     <div class="container">
-        <div class="title">registrar</div>
+        <div class="title">Crie sua Conta</div>
         <form action="cadastrar-funcionario" method="post">
             <div class="user-details">
 
                 <div class="input-box">
-                    <span class="details">Nome Completo do Funcionario</span>
-                    <input name="nomeFuncionario" type="text" placeholder="Insira seu nome completo" required>
+                    <span class="details">Nome Completo</span>
+                    <input name="nomeFuncionario" type="text" placeholder="Insira seu nome" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">CPF</span>
-                    <input name="cpf" type="text" placeholder="Insira um cpf ao funcionario" required>
+                    <input name="cpf" type="text" placeholder="Insira seu cpf" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input name="email" type="email" placeholder="Insira o email do funcioanrio" required>
+                    <input name="email" type="email" placeholder="Insira seu email" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Cargo</span>
-                    <input name="cargo" type="text" placeholder="Insira o cargo do Funcionario" required>
+                    <input name="cargo" type="text" placeholder="Insira seu cargo" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Senha</span>
-                    <input type="password" placeholder="Insira uma Senha para o Funcionario" required>
+                    <input type="password" placeholder="Insira sua senha" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Confirmar Senha</span>
-                    <input name="senha" type="password" placeholder="Confirme a senha do Funcionario" required>
+                    <input name="senha" type="password" placeholder="Confirme sua senha" required>
                 </div>
             </div>
             
              <div class="button">
-                <input type="submit" value="Registrar">
+                <input type="submit" value="Registre-se">
              </div>
     </div>
     </form>
