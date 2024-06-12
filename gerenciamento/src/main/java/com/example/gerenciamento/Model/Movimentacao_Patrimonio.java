@@ -3,7 +3,6 @@ package com.example.gerenciamento.Model;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,32 +26,32 @@ public class Movimentacao_Patrimonio implements Serializable {
     @JoinColumn(name = "idPatrimonio", referencedColumnName = "idPatrimonio", nullable = false)
     private Patrimonio idPatrimonio;
 
-    @Nonnull
+    
     @Column(length = 100)
     private String origem;
 
-    @Nonnull
+    
     @Column(length = 100)
     private String destino;
 
-    @Nonnull
+    
     @Column(length = 200)
     private String descricao;
 
-    @Nonnull
+    
     @Column(length = 50)
     private String tipo;
 
-    @Nonnull
+    
     @Column(length = 10)
     private String status;
 
     // zoned date time é para representar a data, horario e fuso horário caso
     // necessário das datas
-    @Nonnull
+    
     private ZonedDateTime dataSolicitacao;
 
-    @Nonnull
+    
     private ZonedDateTime dataAprovacao;
 
     public long getIdMovimentacaoPatrimonio() {

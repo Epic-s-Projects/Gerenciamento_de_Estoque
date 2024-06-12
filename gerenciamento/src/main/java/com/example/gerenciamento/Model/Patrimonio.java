@@ -2,7 +2,6 @@ package com.example.gerenciamento.Model;
 
 import java.io.Serializable;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,27 +18,27 @@ public class Patrimonio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPatrimonio;
 
-    @Nonnull
+    
     @Column(length = 200)
     private String nPatrimonio;
 
-    @Nonnull
+    
     @Column(length = 200)
     private String nome;
 
-    @Nonnull
+    
     @Column(length = 150)
     private String descricao;
 
-    @Nonnull
+    
     @Column(length = 100)
     private String categoriaPatrimonio;
 
-    @Nonnull
+    
     @Column(length = 10)
     private String status;
 
-    @Nonnull
+    
     @Column(length = 50)
     private String ultimaManutencao;
 
