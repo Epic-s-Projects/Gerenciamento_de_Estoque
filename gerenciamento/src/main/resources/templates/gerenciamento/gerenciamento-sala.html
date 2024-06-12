@@ -6,6 +6,7 @@
     <link rel="stylesheet" th:href="@{css/header.css}">
     <link rel="stylesheet" th:href="@{css/footer.css}">
     <link rel="stylesheet" th:href="@{css/universal.css}">
+    <link rel="stylesheet" th:href="@{css/gerenciamento.css}">
 </head>
 <body>
     <div th:insert="~{fragmentos/header_logado :: header}"></div>
@@ -20,6 +21,9 @@
                     <p class="card-text">CPF: <span th:text="${sala.funcionario.cpf}">CPF do Funcionário</span></p>
                     <a th:href="@{'/edit-sala/' + ${sala.nSala}}" class="btn btn-primary">Editar</a>
                     <a th:href="@{'/delete-sala/' + ${sala.nSala}}" class="btn btn-danger">Excluir</a>
+                    <a href="/cadastro-patrimonio" class="btn btn-primary">Cadastrar Ativo Patrimonial</a>
+                    <a href="/cadastro-estoque" class="btn btn-primary">Cadastrar Estoque</a>
+                    <!-- <a href="/cadastro-patrimonio" class="btn btn-primary">Ativos patrimoniais</a> -->
                 </div>
             </div>
         </div>

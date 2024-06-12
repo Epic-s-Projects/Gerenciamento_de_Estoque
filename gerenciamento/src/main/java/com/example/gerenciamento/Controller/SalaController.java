@@ -74,7 +74,7 @@ public class SalaController {
         return "redirect:/gerenciamento-sala";
     }
 
-    @RequestMapping(value = "/edit-sala/{nSala}", method = RequestMethod.GET)
+    @GetMapping("/edit-sala/{nSala}")
     public ModelAndView editarSala(@PathVariable("nSala") String nSala) {
         ModelAndView mv = new ModelAndView("crud/sala/edit-sala");
         Optional<Sala> sala = salaRepository.findBynSala(nSala);
@@ -88,13 +88,19 @@ public class SalaController {
     }
 
     @PostMapping("/atualizar-sala")
-    public String atualizarSala(@RequestParam("nSala") String nSala, Sala sala) {
+    public String atualizarSala(@RequestParam("nSala") String nSala, @RequestParam("cpf") String cpf, @RequestParam("categoria_sala") String categoriaSala) {
         Optional<Sala> salaExistente = salaRepository.findBynSala(nSala);
         if (salaExistente.isPresent()) {
             Sala salaAtualizada = salaExistente.get();
-            salaAtualizada.setnSala(sala.getnSala());
-            salaAtualizada.setFuncionario(sala.getFuncionario());
-            salaAtualizada.setCategoriaSala(sala.getCategoriaSala());
+            salaAtualizada.setCategoriaSala(categoriaSala);
+            
+            Optional<Funcionario> funcionario = funcionarioRepository.findById(cpf);
+            if (funcionario.isPresent()) {
+                salaAtualizada.setFuncionario(funcionario.get());
+            } else {
+                // Lógica para lidar com funcionário não encontrado, se necessário
+            }
+
             salaRepository.save(salaAtualizada);
             return "redirect:/gerenciamento-sala";
         } else {

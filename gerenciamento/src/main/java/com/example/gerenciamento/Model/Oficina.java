@@ -2,7 +2,6 @@ package com.example.gerenciamento.Model;
 
 import java.io.Serializable;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +22,7 @@ public class Oficina implements Serializable {
     @JoinColumn(name = "cpf", referencedColumnName = "cpf", nullable = false)
     private Funcionario funcionario;
 
-    @Nonnull
+    
     @Column(length = 100)
     private String nomeOficina;
 

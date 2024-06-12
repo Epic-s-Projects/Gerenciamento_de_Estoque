@@ -33,7 +33,7 @@ public class FuncionarioController {
         try {
             funcionarioRepository.save(funcionario);
             System.out.println("Cadastro realizado com sucesso!");
-            return "/";
+            return "index";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar funcionario: " + e.getMessage());
             model.addAttribute("erroSenha", "Sua senha está incorreta");

@@ -26,7 +26,7 @@ public class EstoqueController {
         try {
             estoqueRepository.save(estoque);
             System.out.println("Cadastro realizado com sucesso!");
-            return "/crud/estoque/cadastro-estoque";
+            return "index";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar estoque: " + e.getMessage());
             return "/crud/estoque/cadastro-estoque";

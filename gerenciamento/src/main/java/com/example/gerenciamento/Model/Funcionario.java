@@ -1,8 +1,6 @@
 package com.example.gerenciamento.Model;
 
 import java.io.Serializable;
-
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -15,19 +13,15 @@ public class Funcionario implements Serializable {
     @Id
     private String cpf;
 
-    @Nonnull
     @Column(length = 200)
     private String nomeFuncionario;
 
-    @Nonnull
     @Column(length = 100)
     private String cargo;
 
-    @Nonnull
     @Column(length = 100)
     private String email;
 
-    @Nonnull
     @Column(length = 30)
     private String senha;
 
