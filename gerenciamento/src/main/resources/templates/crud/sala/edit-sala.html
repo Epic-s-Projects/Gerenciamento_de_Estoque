@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://thymeleaf.org/">
-
+<html lang="en" xmlns:th="http://thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Sala</title>
+    <title>Formulario</title>
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/universal.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <link rel="stylesheet" th:href="@{/css/edit.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-
 <body>
     <div th:insert="~{fragmentos/header_logado :: header}"></div>
     <div class="container">
-        <h1>Editar Sala</h1>
-        <form action="/atualizar-sala" method="post">
-            <input type="hidden" name="nSala" th:value="${nSala}">
-            <div>
-                <label for="categoria_sala">Categoria da Sala:</label>
-                <input type="text" id="categoria_sala" name="categoria_sala" th:value="${sala.categoriaSala}">
-            </div>
-            <div>
-                <label for="cpf">CPF:</label>
+        <div class="form">
+            <h2>Editar Sala</h2>
+            <form action="/atualizar-sala" method="post">
+                <input type="hidden" name="nSala" th:value="${nSala}">
+                <div class="input">
+                    <label for="categoria_sala">Categoria da Sala:</label>
+                    <input type="text" id="categoria_sala" name="categoria_sala" th:value="${sala.categoriaSala}">
+                </div>
+            
+                <div class="input">
+                    <label for="cpf">CPF:</label>
                 <input type="text" id="cpf" name="cpf" th:value="${sala.funcionario.cpf}">
-            </div>
-            <div>
-                <button type="submit">Salvar Alterações</button>
-            </div>
-        </form>
+                </div>
+                
+                <div class="btn">
+                    <input type="submit" value="Editar" id="submit">
+                </div>
+            </form>
+        </div>
     </div>
     <div th:insert="~{fragmentos/footer :: footer}"></div>
 </body>
-
 </html>
