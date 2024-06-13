@@ -22,6 +22,16 @@ public class IndexController {
         return "cadastro/cadastro-funcionario";
     }
 
+    @GetMapping("/cadastro-manutencaoEstoque")
+    public String acessoCadastroManutencaoEstoque() {
+        return "cadastro/cadastro-manutencaoEstoque";
+    }
+
+    @GetMapping("/cadastro-manutencaoPatrimonio")
+    public String acessoCadastroManutencaoPatrimonio() {
+        return "cadastro/cadastro-manutencaoPatrimonio";
+    }
+
     @GetMapping("/manutencoes")
     public String acessoManutencoes() {
         return "manutencoes/manutencoes";

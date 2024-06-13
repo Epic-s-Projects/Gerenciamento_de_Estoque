@@ -1,0 +1,72 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentação de Estoque</title>
+    <link rel="stylesheet" th:href="@{css/header.css}">
+    <link rel="stylesheet" th:href="@{css/cadastro-manutencao.css}">
+    <link rel="stylesheet" th:href="@{css/universal.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<body>
+    <div th:insert="~{fragmentos/header_logado :: header}"></div>
+
+    <div class="container">
+        <h2>Movimentação de Estoque</h2>
+        <form action="">
+            <div class="form-group">
+                <label for="">Solicitante:</label>
+                <input type="text" id="cpf" name="" required>
+            </div>
+            <div class="form-group">
+                <label for="">ID do Estoque:</label>
+                <input type="text" id="cpf" name="" required>
+            </div>
+            <div class="form-group">
+                <label for="categoriaSala">Origem:</label>
+                <input type="text" id="categoriaSala" name="categoriaSala" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoriaSala">Destino:</label>
+                <input type="text" id="categoriaSala" name="categoriaSala" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoriaSala">Descricao:</label>
+                <input type="text" id="categoriaSala" name="categoriaSala" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoriaSala">Tipo:</label>
+                <input type="text" id="categoriaSala" name="categoriaSala" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoriaSala">Status:</label>
+                <input type="text" id="categoriaSala" name="categoriaSala" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoriaSala">Data da Solicitação:</label>
+                <input type="text" id="categoriaSala" name="categoriaSala" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoriaSala">Data da Aprovação:</label>
+                <input type="text" id="categoriaSala" name="categoriaSala" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div th:insert="~{fragmentos/footer :: footer}"></div>
+</body>
+
+</html>
