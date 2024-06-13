@@ -1,0 +1,126 @@
+.container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #000000; /* Cor preta para os títulos */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table thead {
+    background: linear-gradient(90deg, #ff4d4d, #c0392b);
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #ffe6e6;
+    transition: background-color 0.3s ease-in-out;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out;
+}
+
+th:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    table, th, td {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: white;
+    }
+
+    table tbody tr:nth-child(even) {
+        background-color: white;
+    }
+
+    table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #c0392b;
+        flex-basis: 50%;
+    }
+
+    table td {
+        flex-basis: 50%;
+    }
+}
+
+/* Animations and Hover Effects */
+table tbody tr {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+table tbody tr:hover {
+    transform: scale(1.01);
+}
+
+table tbody tr:active {
+    transform: scale(0.98);
+}

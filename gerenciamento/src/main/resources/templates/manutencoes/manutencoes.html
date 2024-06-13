@@ -9,13 +9,15 @@
     <link rel="stylesheet" th:href="@{css/lista.css}">
     <link rel="stylesheet" th:href="@{css/universal.css}">
     <link rel="stylesheet" th:href="@{css/footer.css}">
+    <link rel="stylesheet" th:href="@{css/manutencoes.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div th:insert="~{fragmentos/header_deslogado :: header}"></div>
+    <div th:insert="~{fragmentos/header_logado :: header}"></div>
 
     <div class="container">
         <h2>Movimentações de Patrimônios</h2>
@@ -34,16 +36,38 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="movimentacaoPatrimonio : ${ultimasMovimentacoesPatrimonios}">
-                    <td th:text="${movimentacaoPatrimonio.idMovimentacaoPatrimonio}">ID</td>
-                    <td th:text="${movimentacaoPatrimonio.solicitante.nomeFuncionario}">Solicitante</td>
-                    <td th:text="${movimentacaoPatrimonio.origem}">Origem</td>
-                    <td th:text="${movimentacaoPatrimonio.destino}">Destino</td>
-                    <td th:text="${movimentacaoPatrimonio.descricao}">Descrição</td>
-                    <td th:text="${movimentacaoPatrimonio.tipo}">Tipo</td>
-                    <td th:text="${movimentacaoPatrimonio.status}">Status</td>
-                    <td th:text="${movimentacaoPatrimonio.dataSolicitacao}">Data Solicitação</td>
-                    <td th:text="${movimentacaoPatrimonio.dataAprovacao}">Data Aprovação</td>
+                <tr>
+                    <td data-label="ID">1</td>
+                    <td data-label="Solicitante">João Silva</td>
+                    <td data-label="Origem">Escritório A</td>
+                    <td data-label="Destino">Escritório B</td>
+                    <td data-label="Descrição">Transferência de computador</td>
+                    <td data-label="Tipo">Interna</td>
+                    <td data-label="Status">Aprovado</td>
+                    <td data-label="Data Solicitação">01/06/2024</td>
+                    <td data-label="Data Aprovação">02/06/2024</td>
+                </tr>
+                <tr>
+                    <td data-label="ID">2</td>
+                    <td data-label="Solicitante">Maria Oliveira</td>
+                    <td data-label="Origem">Armazém 1</td>
+                    <td data-label="Destino">Loja Central</td>
+                    <td data-label="Descrição">Envio de móveis</td>
+                    <td data-label="Tipo">Externa</td>
+                    <td data-label="Status">Pendente</td>
+                    <td data-label="Data Solicitação">05/06/2024</td>
+                    <td data-label="Data Aprovação">-</td>
+                </tr>
+                <tr>
+                    <td data-label="ID">3</td>
+                    <td data-label="Solicitante">Carlos Pereira</td>
+                    <td data-label="Origem">Departamento TI</td>
+                    <td data-label="Destino">Sala de Reuniões</td>
+                    <td data-label="Descrição">Realocação de projetor</td>
+                    <td data-label="Tipo">Interna</td>
+                    <td data-label="Status">Rejeitado</td>
+                    <td data-label="Data Solicitação">10/06/2024</td>
+                    <td data-label="Data Aprovação">11/06/2024</td>
                 </tr>
             </tbody>
         </table>
@@ -62,14 +86,32 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="movimentacaoEstoque : ${ultimasMovimentacoesEstoque}">
-                    <td th:text="${movimentacaoEstoque.idMovimentacaoEstoque}">ID</td>
-                    <td th:text="${movimentacaoEstoque.solicitante.nomeFuncionario}">Solicitante</td>
-                    <td th:text="${movimentacaoEstoque.descricao}">Descrição</td>
-                    <td th:text="${movimentacaoEstoque.tipo}">Tipo</td>
-                    <td th:text="${movimentacaoEstoque.status}">Status</td>
-                    <td th:text="${movimentacaoEstoque.dataSolicitacao}">Data Solicitação</td>
-                    <td th:text="${movimentacaoEstoque.dataAprovacao}">Data Aprovação</td>
+                <tr>
+                    <td data-label="ID">1</td>
+                    <td data-label="Solicitante">Ana Costa</td>
+                    <td data-label="Descrição">Compra de papel A4</td>
+                    <td data-label="Tipo">Compra</td>
+                    <td data-label="Status">Aprovado</td>
+                    <td data-label="Data Solicitação">01/06/2024</td>
+                    <td data-label="Data Aprovação">02/06/2024</td>
+                </tr>
+                <tr>
+                    <td data-label="ID">2</td>
+                    <td data-label="Solicitante">Ricardo Lima</td>
+                    <td data-label="Descrição">Solicitação de cartuchos de impressora</td>
+                    <td data-label="Tipo">Requisição</td>
+                    <td data-label="Status">Pendente</td>
+                    <td data-label="Data Solicitação">05/06/2024</td>
+                    <td data-label="Data Aprovação">-</td>
+                </tr>
+                <tr>
+                    <td data-label="ID">3</td>
+                    <td data-label="Solicitante">Fernanda Souza</td>
+                    <td data-label="Descrição">Envio de materiais de limpeza</td>
+                    <td data-label="Tipo">Transferência</td>
+                    <td data-label="Status">Rejeitado</td>
+                    <td data-label="Data Solicitação">10/06/2024</td>
+                    <td data-label="Data Aprovação">11/06/2024</td>
                 </tr>
             </tbody>
         </table>
