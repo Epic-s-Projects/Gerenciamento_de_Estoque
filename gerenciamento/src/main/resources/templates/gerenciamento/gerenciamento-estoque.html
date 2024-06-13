@@ -16,12 +16,12 @@
         <div th:each="estoque : ${estoques}" class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title" th:text="${oficina.nomeOficina}">Nome da Oficina</h5>
-                    <p class="card-text">Responsável: <span th:text="${oficina.funcionario.nomeFuncionario}">Nome do Funcionário</span></p>
-                    <p class="card-text">CPF: <span th:text="${oficina.funcionario.cpf}">CPF do Funcionário</span></p>
-                    <a th:href="@{'/edit-oficina/' + ${oficina.idOficina}}" class="btn btn-primary">Editar</a>
-                    <a th:href="@{'/delete-oficina/' + ${oficina.idOficina}}" class="btn btn-danger">Excluir</a>
-                    <a href="/cadastro-patrimonio" class="btn btn-primary">Ativos patrimoniais</a>
+                    <h5 class="card-title" th:text="${estoque.nome}">Nome</h5>
+                    <p class="card-text">Categoria: <span th:text="${estoque.categoria}">Categoria</span></p>
+                    <p class="card-text">Quantidade: <span th:text="${estoque.quantidade}">Quantidade</span></p>
+                    <a th:href="@{'/edit-estoque/' + ${estoque.idEstoque}}" class="btn btn-primary">Editar</a>
+                    <a th:href="@{'/delete-estoque/' + ${estoque.idEstoque}}" class="btn btn-danger">Excluir</a>
+                    
                 </div>
             </div>
         </div>

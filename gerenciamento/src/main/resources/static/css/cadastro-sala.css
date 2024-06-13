@@ -4,8 +4,8 @@
     margin-top: 12vh;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+    border-radius: 20px;
+    background: #dd5e5e;
 }
 
 h2 {
@@ -37,10 +37,11 @@ button[type="submit"] {
     color: white;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button[type="submit"]:hover {
-    background-color: #ca3e3e;
+    background-color: #be1818;
 }
 
 .error-message {
