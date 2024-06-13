@@ -21,7 +21,8 @@
                     <p class="card-text">CPF: <span th:text="${oficina.funcionario.cpf}">CPF do Funcionário</span></p>
                     <a th:href="@{'/edit-oficina/' + ${oficina.idOficina}}" class="btn btn-primary">Editar</a>
                     <a th:href="@{'/delete-oficina/' + ${oficina.idOficina}}" class="btn btn-danger">Excluir</a>
-                    <a href="/cadastro-patrimonio" class="btn btn-primary">Ativos patrimoniais</a>
+                    <a href="/cadastro-patrimonio" class="btn btn-primary">Cadastrar Ativo Patrimonial</a>
+                    <a href="/cadastro-estoque" class="btn btn-primary">Cadastrar Estoque</a>
                 </div>
             </div>
         </div>

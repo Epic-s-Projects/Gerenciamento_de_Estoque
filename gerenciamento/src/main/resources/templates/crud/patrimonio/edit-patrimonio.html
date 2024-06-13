@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/universal.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div th:insert="~{fragmentos/header_logado :: header}"></div>
+    <div class="container">
+        <div class="form">
+            <h2>Editar Patrimônio</h2>
+            <form action="/atualizar-patrimonio" method="post">
+                <input type="hidden" name="idPatrimonio" th:value="${idPatrimonio}">
+                <div class="input">
+                    <label for="nPatrimonio">Número:</label>
+                    <input type="text" id="nPatrimonio" name="nPatrimonio" th:value="${patrimonio.nPatrimonio}">
+                </div>
+                <div class="input">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" th:value="${patrimonio.nome}">
+                </div>
+
+                <div class="input">
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" th:value="${patrimonio.descricao}">
+                </div>
+
+                <div class="input">
+                    <label for="categoriaPatrimonio">categoriaPatrimonio:</label>
+                    <input type="text" id="categoriaPatrimonio" name="categoriaPatrimonio" th:value="${patrimonio.categoriaPatrimonio}">
+                </div>
+
+                <div class="input">
+                    <label for="status">Status:</label>
+                    <input type="text" id="status" name="status" th:value="${patrimonio.status}">
+                </div>
+
+                <div class="input">
+                    <label for="ultimaManutencao">Última manutenção:</label>
+                    <input type="text" id="ultimaManutencao" name="ultimaManutencao" th:value="${patrimonio.ultimaManutencao}">
+                </div>
+
+                <div class="input">
+                    <label for="sala">Sala:</label>
+                    <input type="text" id="sala" name="sala" th:value="${patrimonio.sala.nSala}">
+                </div>
+
+                <div class="input">
+                    <label for="oficina">Oficina:</label>
+                    <input type="text" id="oficina" name="oficina" th:value="${patrimonio.oficina.idOficina}">
+                </div>
+
+                <div class="btn">
+                    <input type="submit" value="Editar" id="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div th:insert="~{fragmentos/footer :: footer}"></div>
+</body>
+
+</html>

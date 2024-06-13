@@ -1,11 +1,12 @@
 .container {
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 12vh;
+    margin-top: 2vh;
     padding: 20px;
-    background-color: #f9f9f9;
+    background: #dd5e5e;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
 }
 
 h2 {
@@ -41,6 +42,7 @@ h2 {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: 0.3s;
 }
 
 .form-group button:hover {

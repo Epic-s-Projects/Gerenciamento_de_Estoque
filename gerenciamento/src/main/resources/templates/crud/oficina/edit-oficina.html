@@ -18,27 +18,16 @@
     <div th:insert="~{fragmentos/header_logado :: header}"></div>
     <div class="container">
         <div class="form">
-            <h2>Editar Estoque</h2>
-            <form action="/atualizar-estoque" method="post">
-                <input type="hidden" name="idEstoque" th:value="${idEstoque}">
+            <h2>Editar Oficina</h2>
+            <form action="/atualizar-oficina" method="post">
+                <input type="hidden" name="idOficina" th:value="${idOficina}">
                 <div class="input">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" th:value="${estoque.nome}">
+                    <label for="nomeOficina">Nome da Oficina:</label>
+                    <input type="text" id="nomeOficina" name="nomeOficina" th:value="${oficina.nomeOficina}">
                 </div>
-
                 <div class="input">
-                    <label for="descricao">Descrição:</label>
-                    <input type="text" id="descricao" name="descricao" th:value="${estoque.descricao}">
-                </div>
-
-                <div class="input">
-                    <label for="categoria">Categoria:</label>
-                    <input type="text" id="categoria" name="categoria" th:value="${estoque.categoria}">
-                </div>
-
-                <div class="input">
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="text" id="quantidade" name="quantidade" th:value="${estoque.quantidade}">
+                    <label for="funcionario.cpf">Funcionário responsavel (CPF):</label>
+                    <input type="text" id="funcionario.cpf" name="funcionario.cpf" th:value="${oficina.funcionario.cpf}">
                 </div>
 
                 <div class="btn">

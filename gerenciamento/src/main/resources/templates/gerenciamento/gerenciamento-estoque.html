@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gerenciamento de Estoques</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{css/header.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
+    <link rel="stylesheet" th:href="@{css/universal.css}">
+    <link rel="stylesheet" th:href="@{css/gerenciamento.css}">
+</head>
+<body>
+    <div th:insert="~{fragmentos/header_logado :: header}"></div>
+<div class="container mt-4">
+    <h2>Lista de Estoques</h2>
+    <div class="row">
+        <div th:each="estoque : ${estoques}" class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${estoque.nome}">Nome</h5>
+                    <p class="card-text">Categoria: <span th:text="${estoque.categoria}">Categoria</span></p>
+                    <p class="card-text">Quantidade: <span th:text="${estoque.quantidade}">Quantidade</span></p>
+                    <a th:href="@{'/edit-estoque/' + ${estoque.idEstoque}}" class="btn btn-primary">Editar</a>
+                    <a th:href="@{'/delete-estoque/' + ${estoque.idEstoque}}" class="btn btn-danger">Excluir</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{fragmentos/footer :: footer}"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
